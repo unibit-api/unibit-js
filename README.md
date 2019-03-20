@@ -11,7 +11,7 @@ The UniBit Stock News API requires a premium account, but in return gives a weal
 ## Install
 To install UniBit, type:
 ```shell
-npm install javascript-unibit
+npm install --save unibit-js
 ```
 
 ## Examples
