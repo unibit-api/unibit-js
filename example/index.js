@@ -1,20 +1,21 @@
+
 // Please replace the demo key with your own Access Key
 const unibit = require("unibit-js")({ AccessKey: "demo" });
 
 // some APIs require more parameters than just a ticker
-let params = {};
+// let params = {};
 
-/***********************************************
- * Basic
- ***********************************************/
-// GET welcome message
-unibit.basic.welcomeToUnibit()
-  .then((data) => {
-    console.log("result 1 is: ", data);
-  })
-  .catch(error => {
-    console.log("error 1 is: ", error);
-  });
+// /***********************************************
+//  * Basic
+//  ***********************************************/
+// // GET welcome message
+// unibit.basicV2.welcomeToUnibit()
+//   .then((data) => {
+//     console.log("result 1 is: ", data);
+//   })
+//   .catch(error => {
+//     console.log("error 1 is: ", error);
+//   });
 
 /***********************************************
  * Stock Price
@@ -137,3 +138,41 @@ unibit.basic.welcomeToUnibit()
 //   .catch(error => {
 //     console.log("error 12 is: ", error);
 //   });
+
+/*
+Version 2 test cases
+*/
+// let params = {
+// 	tickers: "AAPL",
+// 	startDate: "2019-10-30",
+// 	endDate: "2019-10-30",
+// 	startMinute: "09:30:00",
+// 	endMinute: "16:00:00",
+// 	selectedField: "all"
+// }
+
+// unibit.stockV2.getRealtimeStockPrice(params)
+// 	.then((data) => {
+// 		console.log("result 1 is: ", data);
+// 	})
+// 	.catch(error => {
+// 		console.log("error 1 is: ", error);
+// 	});
+
+let params = {
+	tickers: "AAPL,WORK",
+	startDate: "2019-10-30",
+	endDate: "2019-10-30",
+	interval: 1,
+	selectedField: "all"
+}
+
+unibit.stockV2.getHistoricalStockPrice(params)
+	.then((data) => {
+		console.log("result 1 is: ", data);
+	})
+	.catch(error => {
+		console.log("error 1 is: ", error);
+	});
+
+
