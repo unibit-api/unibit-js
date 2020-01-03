@@ -23,6 +23,7 @@ module.exports = config => {
 		stockV2: require("./lib/stockV2")(config),
 		basicV2: require("./lib/basicV2")(config),
 		companyV2: require("./lib/companyV2")(config),
-		newsV2: require("./lib/newsV2")(config)
+		newsV2: require("./lib/newsV2")(config),
+		corporateV2: require("./lib/corporateV2")(config)
 	};
 };

@@ -93,15 +93,28 @@ Version 2 test cases
 //	.catch(error => {
 //		console.log("error 1 is: ", error);
 //	});
-
+//
+//let params = {
+//	tickers: "AAPL,WORK",
+//	genre: "partnership",
+//	sector: "technology",
+//	selectedField: "all"
+//}
+//
+//unibit.newsV2.getStockNews(params)
+//	.then((data) => {
+//		console.log("result 1 is: ", data);
+//	})
+//	.catch(error => {
+//		console.log("error 1 is: ", error);
+//	});
 let params = {
-	tickers: "AAPL,WORK",
-	genre: "partnership",
-	sector: "technology",
-	selectedField: "all"
+	//tickers: "all",
+	startDate: "2019-08-16",
+	endDate: "2019-08-20"
 }
 
-unibit.newsV2.getStockNews(params)
+unibit.corporateV2.getCorporateDividends(params)
 	.then((data) => {
 		console.log("result 1 is: ", data);
 	})
