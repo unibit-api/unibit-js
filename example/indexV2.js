@@ -108,13 +108,45 @@ Version 2 test cases
 //	.catch(error => {
 //		console.log("error 1 is: ", error);
 //	});
+//let params = {
+//	tickers: "all",
+//	startDate: "2019-08-16",
+//	endDate: "2019-08-20"
+//}
+//
+//unibit.corporateV2.getCorporateDividends(params)
+//	.then((data) => {
+//		console.log("result 1 is: ", data);
+//	})
+//	.catch(error => {
+//		console.log("error 1 is: ", error);
+//	});
+
+//let params = {
+//	tickers: "BCH-USD",
+//	startDate: "2019-08-25",
+//	endDate: "2019-08-30"
+//}
+//
+//unibit.cryptoV2.getHistoricalCryptoPrice(params)
+//	.then((data) => {
+//		console.log("result 1 is: ", data);
+//	})
+//	.catch(error => {
+//		console.log("error 1 is: ", error);
+//	});
+
 let params = {
-	//tickers: "all",
-	startDate: "2019-08-16",
-	endDate: "2019-08-20"
+	base: "usd",
+	foreign: "cny,eur,inr",
+	amount:1,
+	startDate: "2019-08-29",
+	endDate: "2019-08-29",
+	startMinute: "11:00:00",
+	endMinute: "12:00:00"
 }
 
-unibit.corporateV2.getCorporateDividends(params)
+unibit.forexV2.getRealtimeForexRates(params)
 	.then((data) => {
 		console.log("result 1 is: ", data);
 	})
