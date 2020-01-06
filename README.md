@@ -8,13 +8,18 @@ To get started, sign up at (https://unibit.ai/login) to request a free access ke
 
 The UniBit Stock News API requires a premium account, but in return gives a wealth of news articles on all 8000 US-listed companies. Along with this, UniBit provides analyses on each news article. With deep learning, each article is classified into a comprehensive genre list, and named entities and sentiment are also extracted. 
 
+## Update
+Unibit Javascript SDK is now available for Version2 APIs!
+For the API documentation, visit (https://unibit.ai/docs)
+For the Javascript SDK for Version2 APIs, go to [Version2 APIs example](#v2_example)
+
 ## Install
 To install UniBit, type:
 ```shell
 npm install --save unibit-js
 ```
 
-## Examples
+## Version1 APIs Examples
 
 Get the real time price of Apple (AAPL)
 
@@ -57,6 +62,9 @@ unibit.news.getLatestStockNews("AAPL")
     console.log(error);
   });
 ```
+
+## <a name = "v2_example"></a>Version2 APIs Examples
+
 ## Contribute
 
 In the UniBit Javascript SDK, we not only want to wrap the UniBit API, but open source methods of stock analysis, be it with some fancy quantitative strategy, with graphing, or with machine learning. Propose something in an issue or contact me at chenfeng@unibit.ai if you want to help!
