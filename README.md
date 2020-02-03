@@ -2,9 +2,9 @@
 
 *A Javascript module to get stock data and news from the UniBit API*
 
-UniBit is a free API that provides real time and historical financial data, as well as financial news. This SDK is a quick starter for the UniBit API (https://www.unibit.ai) which has Javascript functions (return a Promise) for each available API call. For the UniBit API documentation, visit (https://unibit.ai/docs)
+UniBit is a free API that provides real time and historical financial data, as well as financial news. This SDK is a quick starter for the UniBit API (https://www.unibit.ai) which has Javascript functions (return a Promise) for each available API call. For the UniBit API documentation, visit (https://unibit.ai/docs/V2.0/introduction)
 
-To get started, sign up at (https://unibit.ai/login) to request a free access key. With a free key, all non-news API features are available with generous rate limits.
+To get started, sign up at (https://unibit.ai/signin) to request a free access key. With a free key, all non-news API features are available with generous rate limits.
 
 The UniBit Stock News API requires a premium account, but in return gives a wealth of news articles on all 8000 US-listed companies. Along with this, UniBit provides analyses on each news article. With deep learning, each article is classified into a comprehensive genre list, and named entities and sentiment are also extracted. 
 
@@ -19,9 +19,12 @@ npm install --save unibit-js
 Get the real time price of Apple (AAPL)
 
 ```javascript
-const unibit = require("unibit-js")({ AccessKey: "demo" });
+const unibit = require("unibit-js")({ AccessKey: "demo" }).v2;
 
-unibit.stockprice.getPricesRealTime("AAPL")
+params = {
+  tickers: "AMZN",
+}
+unibit.stockPrice.getPricesRealTime(params)
   .then(data => {
     console.log(data);
   })
@@ -33,9 +36,12 @@ unibit.stockprice.getPricesRealTime("AAPL")
 Get Apple's Company Profile
 
 ```javascript
-const unibit = require("unibit-js")({ AccessKey: "demo" });
+const unibit = require("unibit-js")({ AccessKey: "demo" }).v2;
 
-unibit.companyInfo.getCompanyProfile("AAPL")
+params = {
+  tickers: "AMZN"
+};
+unibit.companyInfo.getCompanyProfile(params)
   .then(data => {
     console.log(data);
   })
@@ -47,9 +53,12 @@ unibit.companyInfo.getCompanyProfile("AAPL")
 Get the latest news on Apple
 
 ```javascript
-const unibit = require("unibit-js")({ AccessKey: "demo" });
+const unibit = require("unibit-js")({ AccessKey: "demo" }).v2;
 
-unibit.news.getLatestStockNews("AAPL")
+params = {
+  tickers: "AMZN"
+};
+unibit.companyInfo.getStockNews(params)
   .then(data => {
     console.log(data);
   })
