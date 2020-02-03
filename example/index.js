@@ -1,5 +1,5 @@
 // Please replace the demo key with your own Access Key
-const unibit = require("unibit-js")({ AccessKey: "demo" });
+const unibit = require("unibit-js")({ AccessKey: "demo" }).v2;
 
 // some APIs require more parameters than just a ticker
 let params = {};
@@ -20,7 +20,10 @@ unibit.basic.welcomeToUnibit()
  * Stock Price
  ***********************************************/
 // 1. GET real time stock price
-// unibit.stockPrice.getPricesRealTime("AMZN")
+// params = {
+//   tickers: "AMZN",
+// }
+// unibit.stockPrice.getPricesRealTime(params)
 //   .then(data => {
 //     console.log("result 2 is: ", data);
 //   })
@@ -30,10 +33,9 @@ unibit.basic.welcomeToUnibit()
 
 // 2. GET historical stock price
 // params = {
-//   range: "1m", // 1m, 3m, 1y, 3y, 5y, 10y, 20y
-//   interval: "1", // 1, 2, 3, 4, 5...
+//   tickers: "AMZN"
 // };
-// unibit.stockPrice.getPricesHistorical("AMZN", params)
+// unibit.stockPrice.getPricesHistorical(params)
 //   .then(data => {
 //     console.log("result 3 is: ", data);
 //   })
@@ -46,10 +48,9 @@ unibit.basic.welcomeToUnibit()
  ***********************************************/
 // 3. GET company financials
 // params = {
-//   type: "income_statement", // income_statement, balance_sheet, cash_flow
-//   interval: "annual" // annual, quarterly
+//   tickers: "AMZN"
 // };
-// unibit.companyInfo.getCompanyFinancials("AMZN", params)
+// unibit.companyInfo.getCompanyFinancials(params)
 //   .then(data => {
 //     console.log("result 4 is: ", data);
 //   })
@@ -58,7 +59,10 @@ unibit.basic.welcomeToUnibit()
 //   });
 
 // 4. GET company profile
-// unibit.companyInfo.getCompanyProfile("AMZN")
+// params = {
+//   tickers: "AMZN"
+// };
+// unibit.companyInfo.getCompanyProfile(params)
 //   .then(data => {
 //     console.log("result 5 is: ", data);
 //   })
@@ -67,7 +71,10 @@ unibit.basic.welcomeToUnibit()
 //   });
 
 // 5. GET company financial summary
-// unibit.companyInfo.getCompanyFinancialSummary("AMZN")
+// params = {
+//   tickers: "AMZN"
+// };
+// unibit.companyInfo.getCompanyFinancialSummary(params)
 //   .then(data => {
 //     console.log("result 6 is: ", data);
 //   })
@@ -77,9 +84,10 @@ unibit.basic.welcomeToUnibit()
 
 // 6. GET company ownership structure
 // params = {
-//   ownership_type: "majority_holder" // majority_holder, top_institutional_holder, top_mutual_fund_holder
+//   tickers: "AMZN",
+//   ownershipType: "majority_holder" // majority_holder, top_institutional_holder, top_mutual_fund_holder
 // };
-// unibit.companyInfo.getOwnershipStructure("AMZN", params)
+// unibit.companyInfo.getOwnershipStructure(params)
 //   .then(data => {
 //     console.log("result 7 is: ", data);
 //   })
@@ -88,7 +96,10 @@ unibit.basic.welcomeToUnibit()
 //   });
 
 // 7. GET insider transactions
-// unibit.companyInfo.getInsiderTransactions("AMZN")
+// params = {
+//   tickers: "AMZN"
+// };
+// unibit.companyInfo.getInsiderTransactions(params)
 //   .then(data => {
 //     console.log("result 8 is: ", data);
 //   })
@@ -106,7 +117,10 @@ unibit.basic.welcomeToUnibit()
 //   });
 
 // 9. GET SEC filing links
-// unibit.companyInfo.getSECFilingLinks("AMZN")
+// params = {
+//   tickers: "AMZN"
+// };
+// unibit.companyInfo.getSECFilingLinks(params)
 //   .then(data => {
 //     console.log("result 10 is: ", data);
 //   })
@@ -118,7 +132,10 @@ unibit.basic.welcomeToUnibit()
  * News
  ***********************************************/
 // 10. GET latest stock news
-// unibit.news.getLatestStockNews("AMZN")
+// params = {
+//   tickers: "AMZN"
+// };
+// unibit.companyInfo.getStockNews(params)
 //   .then(data => {
 //     console.log("result 11 is: ", data);
 //   })
@@ -136,4 +153,125 @@ unibit.basic.welcomeToUnibit()
 //   })
 //   .catch(error => {
 //     console.log("error 12 is: ", error);
+//   });
+
+/***********************************************
+ * Actions
+ ***********************************************/
+// 12. GET Company Splits
+// params = {
+//   startDate: "2019-08-25",
+//   endDate: "2019-08-26"
+// };
+// unibit.companyInfo.getCorporateSplits(params)
+//   .then(data => {
+//     console.log("result 13 is: ", data);
+//   })
+//   .catch(error => {
+//     console.log("error 13 is: ", error);
+//   });
+
+// 13. GET Corporate Dividends
+// params = {
+//   startDate: "2019-08-25",
+//   endDate: "2019-08-26"
+// };
+// unibit.companyInfo.getCorporateDividends(params)
+//   .then(data => {
+//     console.log("result 13 is: ", data);
+//   })
+//   .catch(error => {
+//     console.log("error 13 is: ", error);
+//   });
+
+/***********************************************
+ * Analytics
+ ***********************************************/
+// 14. GET Stock Analyst Ratings
+// params = {
+//   tickers: "AAPL",
+//   startDate: "2020-01-02",
+//   endDate: "2020-01-03",
+// }
+// unibit.analytics.getStockAnalystRatings(params)
+//   .then(data => {
+//     console.log("result 15 is: ", data);
+//   })
+//   .catch(error => {
+//     console.log("error 15 is: ", error);
+//   });
+
+/***********************************************
+ * Crypto
+ ***********************************************/
+// 15. GET Historical Crypto Price
+// params = {
+//   tickers: "BCH-USD,BNB-USD"
+// }
+// unibit.crypto.getHistoricalCryptoPrice(params)
+//   .then(data => {
+//     console.log("result 16 is: ", data);
+//   })
+//   .catch(error => {
+//     console.log("error 16 is: ", error);
+//   });
+
+/***********************************************
+ * Forex
+ ***********************************************/
+// 16. GET Realtime Forex Rates
+// params = {
+//   base: "usd"
+// }
+// unibit.forex.getRealtimeForexPrice(params)
+//   .then(data => {
+//     console.log("result 17 is: ", data);
+//   })
+//   .catch(error => {
+//     console.log("error 17 is: ", error);
+//   });
+
+// 17. GET Historical Forex Rates
+// params = {
+//   base: "usd"
+// }
+// unibit.forex.getHistoricalForexPrice(params)
+//   .then(data => {
+//     console.log("result 18 is: ", data);
+//   })
+//   .catch(error => {
+//     console.log("error 18 is: ", error);
+//   });
+
+/***********************************************
+ * Reference
+ ***********************************************/
+// 18. GET Stock Coverage
+// params = {}
+// unibit.reference.getStockCoverage(params)
+//   .then(data => {
+//     console.log("result 19 is: ", data);
+//   })
+//   .catch(error => {
+//     console.log("error 19 is: ", error);
+//   });
+
+// 19. GET Futures and Commodities Coverage
+// params = {}
+// unibit.reference.getFuturesAndCommoditiesCoverage(params)
+//   .then(data => {
+//     console.log("result 20 is: ", data);
+//   })
+//   .catch(error => {
+//     console.log("error 20 is: ", error);
+//   });
+
+// 20. GET Crypto Coverage
+// params = {}
+// unibit.reference.getCryptoCoverage(params)
+//   .then(data => {
+//     console.log("result 21 is: ", data);
+//   })
+//   .catch(error => {
+//     console.log("error 21 is: ", error);
 //   });
