@@ -39,7 +39,7 @@ module.exports = config => {
       // news: require("./lib/v2/news")(config_v2),
       forex: require("./lib/v2/forex")(config_v2),
       crypto: require("./lib/v2/crypto")(config_v2),
-      // reference: require("./lib/reference")(config_v2)
+      reference: require("./lib/v2/reference")(config_v2)
     }
   };
 };
