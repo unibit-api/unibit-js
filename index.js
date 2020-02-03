@@ -38,7 +38,7 @@ module.exports = config => {
       analytics: require("./lib/v2/analytics")(config_v2),
       // news: require("./lib/v2/news")(config_v2),
       // forex: require("./lib/forex")(config_v2),
-      // crypto: require("./lib/crypto")(config_v2),
+      crypto: require("./lib/v2/crypto")(config_v2),
       // reference: require("./lib/reference")(config_v2)
     }
   };
