@@ -15,3 +15,28 @@ run example:
 ```
 node index.js
 ```
+
+
+## Develop On Local
+### Pull 
+
+```
+git clone git@github.com:unibit-api/unibit-js.git
+```
+
+### Build
+
+In root directory: 
+```
+npm install
+npm link
+```
+
+### Install
+
+```
+npm install
+npm link unibit-js
+```
+
+### Run Examples
