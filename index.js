@@ -31,9 +31,9 @@ module.exports = config => {
       reference: require("./lib/reference")(config_v1)
     },
     v2: {
-      utils: require("./lib/utils")(config_v2),
-      basic: require("./lib/basic")(config_v2),
-      // stockPrice: require("./lib/stockPrice")(config_v2),
+      utils: require("./lib/v2/utils")(config_v2),
+      basic: require("./lib/v2/basic")(config_v2),
+      stockPrice: require("./lib/v2/stockPrice")(config_v2),
       // companyInfo: require("./lib/companyInfo")(config_v2),
       // news: require("./lib/news")(config_v2),
       // forex: require("./lib/forex")(config_v2),
