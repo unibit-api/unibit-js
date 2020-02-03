@@ -1,6 +1,6 @@
 {
   "name": "unibit-js",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "description": "Interface to Unibit API",
   "main": "index.js",
   "scripts": {
