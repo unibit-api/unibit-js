@@ -22,7 +22,7 @@ Get the real time price of Apple (AAPL)
 const unibit = require("unibit-js")({ AccessKey: "demo" }).v2;
 
 params = {
-  tickers: "AMZN",
+  tickers: "AAPL",
 }
 unibit.stockPrice.getPricesRealTime(params)
   .then(data => {
@@ -39,7 +39,7 @@ Get Apple's Company Profile
 const unibit = require("unibit-js")({ AccessKey: "demo" }).v2;
 
 params = {
-  tickers: "AMZN"
+  tickers: "AAPL"
 };
 unibit.companyInfo.getCompanyProfile(params)
   .then(data => {
@@ -56,7 +56,7 @@ Get the latest news on Apple
 const unibit = require("unibit-js")({ AccessKey: "demo" }).v2;
 
 params = {
-  tickers: "AMZN"
+  tickers: "AAPL"
 };
 unibit.companyInfo.getStockNews(params)
   .then(data => {
